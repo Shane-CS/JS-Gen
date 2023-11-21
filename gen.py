@@ -9,9 +9,9 @@ from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 # Step 1: Load the presentations
 ppts = []
-for file in os.listdir('/path/to/your/ppts'):
+for file in os.listdir('./assests/powerpoints'):
     if file.endswith(".ppt") or file.endswith(".pptx"):
-        ppts.append(Presentation(os.path.join('/path/to/your/ppts', file)))
+        ppts.append(Presentation(os.path.join('./assests/powerpoints', file)))
 
 # Step 2: Extract text
 texts = []
@@ -35,7 +35,7 @@ tokens = [stemmer.stem(token) for token in tokens]  # Apply stemming
 # Step 4: Course Breakdown
 # 'courses' is a list of documents with each representing a course
 courses = []
-for file in os.listdir('/path/to/your/courses'):
+for file in os.listdir('./assests/courses'):
     with open(file, 'r') as course_file:
         courses.append(course_file.read())
 
